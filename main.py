@@ -272,4 +272,3 @@ while True:
         print()
     if switch == 6:
         break
-print()
