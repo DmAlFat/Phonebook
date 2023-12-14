@@ -246,31 +246,30 @@ def options():
     return switch
 
 
-if __name__ == '__main__':
+Phonebook = Phonebook()  # Создание объекта класса Phonebook
 
-    Phonebook = Phonebook()  # Создание объекта класса Phonebook
-
-    # Запуск цикла для перемещения по главному меню телефонного справочника
-    # в зависимости от значения, переданного функцией options
-    while True:
-        switch = options()
-        if switch == 1:
-            Phonebook.show_pages()
-        if switch == 2:
-            Phonebook.add_note()
-        if switch == 3:
-            query = input("Введите личный телефон (сотовый) изменяемой записи\n(Для уточнения личного телефона ("
-                          "сотового) Вы можете воспользоваться функцией поиска записи в главном меню телефонного "
-                          "справочника): ")
-            print(Phonebook.change_note(query))
-        if switch == 4:
-            query = input("Введите параметры записи(ей) для удаления, используя в качестве разделителя символ ',': ")
-            print(Phonebook.delete_note(query))
-        if switch == 5:
-            query = input("Введите параметры записи(ей) для поиска, используя в качестве разделителя символ ',': ")
-            print()
-            for i in Phonebook.find_note(query):
-                print(i)
-            print()
-        if switch == 6:
-            break
+# Запуск цикла для перемещения по главному меню телефонного справочника
+# в зависимости от значения, переданного функцией options
+while True:
+    switch = options()
+    if switch == 1:
+        Phonebook.show_pages()
+    if switch == 2:
+        Phonebook.add_note()
+    if switch == 3:
+        query = input("Введите личный телефон (сотовый) изменяемой записи\n(Для уточнения личного телефона ("
+                      "сотового) Вы можете воспользоваться функцией поиска записи в главном меню телефонного "
+                      "справочника): ")
+        print(Phonebook.change_note(query))
+    if switch == 4:
+        query = input("Введите параметры записи(ей) для удаления, используя в качестве разделителя символ ',': ")
+        print(Phonebook.delete_note(query))
+    if switch == 5:
+        query = input("Введите параметры записи(ей) для поиска, используя в качестве разделителя символ ',': ")
+        print()
+        for i in Phonebook.find_note(query):
+            print(i)
+        print()
+    if switch == 6:
+        break
+print()
